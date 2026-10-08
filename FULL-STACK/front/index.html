@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Productos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">CRUD de Productos</h1>
+
+        <!-- Formulario -->
+        <div class="card mb-4">
+            <div class="card-body">
+                <h5 class="card-title" id="form-title">Agregar / Editar Producto</h5>
+                <form id="product-form">
+                    <input type="hidden" id="product-id">
+                    <div class="form-group">
+                        <label for="name">Nombre</label>
+                        <input type="text" class="form-control" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Precio</label>
+                        <input type="number" step="0.01" class="form-control" id="price" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="quantity">Cantidad</label>
+                        <input type="number" class="form-control" id="quantity" required>
+                    </div>
+                    <!-- Nuevo atributo #5 -->
+                    <div class="form-group">
+                        <label for="description">Descripción</label>
+                        <input type="text" class="form-control" id="description" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="categoryId">Categoría</label>
+                        <select class="form-control" id="categoryId" required>
+                            <option value="1">Periféricos</option>
+                            <option value="2">Notebooks</option>
+                            <option value="3">Componentes</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary" id="btn-submit">Guardar</button>
+                    <button type="button" class="btn btn-secondary d-none" id="btn-cancel">Cancelar</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Tabla de Productos -->
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Lista de Productos</h5>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Precio</th>
+                            <th>Cantidad</th>
+                            <th>Descripción</th>
+                            <th>Categoría</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="product-table"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
